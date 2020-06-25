@@ -4,12 +4,15 @@ from tkinter import *
 def UesrConfirme():
     userconf = Tk()
     userconf.title("Login")
-    userconf.geometry("100x200")
+    userconf.geometry("250x100")
     Label(userconf,text="Usuario:").place(x=5,y=5)
     nome = Entry()
-    nome.place(x=80,y=5)
-    senha = Entry("*")
-    senha.place(x=5,y=50)
+    nome.place(x=55,y=5)
+    Label(userconf,text="Senha:").place(x=5,y=30)
+    senha = Entry(show="*")
+    senha.place(x=50,y=30)
+    envia = Button(userconf,text="Confirma")
+    envia.place(x=125,y=60)
     if senha == "1":
         return True
     userconf.mainloop()

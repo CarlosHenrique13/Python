@@ -5,7 +5,7 @@ from complet import*
 
 #Para Verificar Quando Iniciar o Aplicativo
 def Inicializar():
-    #conf = ConfigAnalise()
+    conf = ConfigAnalise()
     user = UesrConfirme()
     if user == True:
         pass
