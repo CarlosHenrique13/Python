@@ -1,4 +1,5 @@
 from tkinter import *
+import os
 
 #Confima o Usuario se Existe
 def UesrConfirme():
@@ -16,4 +17,12 @@ def UesrConfirme():
     if senha == "1":
         return True
     userconf.mainloop()
+
+#Criar novo Usuario
+def NewUser(user,senha):
+    arg = open("Proprietes\Usuario.user","at")
+    arg.write(f"Usuario={user}\n")
+    arg.write(f"Passowrd={senha}\n")
+    arg.close()
+
     
