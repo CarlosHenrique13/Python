@@ -16,6 +16,6 @@ def Interface():
     janela = Tk()
     janela.title("Projeto Nome")
     janela.geometry("500x400")
-
+    Label(text="Zona de Teste")
     janela.mainloop()
 

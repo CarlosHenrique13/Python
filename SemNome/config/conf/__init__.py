@@ -1,4 +1,5 @@
 from datetime import datetime
+from config.user import *
 import os
 
 
@@ -8,7 +9,7 @@ def LerConf():
     linhas = arg.readlines()
     linha = []
     for l in range(0,len(linhas)):
-        linha.append(linhas[l][:len(linhas[l])-1].split("="))
+        linha.append(linhas[l][:len(linhas[l])-1].lower().split("="))
     return linha
 
 
@@ -37,7 +38,18 @@ def ConfigAnalise(raiz):
         arg.close()
 
    
-    print(LerConf())
+    #ANALISAR OS COMANDOS DOS ARQUIVO CONF
+    comando = LerConf()
+    print(comando[0][1])
+    if comando[0][1] == "true":
+       valor =  UesrConfirme()
+       print(valor)
+    for c in range(0,len(comando)):
+        for i in range(0,len(comando[c])):
+            print(comando[c][i])
+            
+
+
     return False
 
  
