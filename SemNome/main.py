@@ -1,14 +1,13 @@
 from tkinter import *
 from config.conf import *
-from config.user import *
+#from config.user import *
 from complet import*
+import os
 
 #Para Verificar Quando Iniciar o Aplicativo
 def Inicializar():
-    conf = ConfigAnalise()
-    user = UesrConfirme()
-    if user == True:
-        pass
+    conf = ConfigAnalise(raiz=os.getcwdb)
+    
 
 Inicializar()
 
