@@ -7,13 +7,15 @@ import os
 #Para Verificar Quando Iniciar o Aplicativo
 def Inicializar():
     conf = ConfigAnalise(raiz=os.getcwdb)
+    print(conf)
     
 
 Inicializar()
+def Interface():
+    #Criação da Janela
+    janela = Tk()
+    janela.title("Projeto Nome")
+    janela.geometry("500x400")
 
-#Criação da Janela
-janela = Tk()
-janela.title("Projeto Nome")
-janela.geometry("500x400")
+    janela.mainloop()
 
-janela.mainloop()

@@ -20,7 +20,7 @@ def UesrConfirme():
 
 #Criar novo Usuario
 def NewUser(user,senha):
-    arg = open("Proprietes\Usuario.user","at")
+    arg = open("Proprietes/Usuario.user","at")
     arg.write(f"Usuario={user}\n")
     arg.write(f"Passowrd={senha}\n")
     arg.close()

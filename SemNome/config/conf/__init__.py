@@ -11,35 +11,35 @@ def LerConf():
         linha.append(linhas[l][:len(linhas[l])-1].split("="))
     return linha
 
-#Propriedades de Quado Foi Instalado são Informação
-def Proprietes(data):
-    arg = open("Proprietes\propriete.propri","wt+")
-    arg.write(f"Data De Instalação={data}\n")
-    arg.close()
 
 #Analisar Se esta todu correto com a aplicação
 def ConfigAnalise(raiz):
     #Pastas e pacote de Configuração
     if not os.path.exists("Proprietes"):
         os.makedirs("ProPrietes")
-
-    if not os.path.isfile("Proprietes\Configurete.conf"):
-        arg = open("Proprietes\Configurete.conf","wt+")
+    #Informação da Instalação
+    if not os.path.isfile("Proprietes/propriete.propri"):
+        data = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        arg = open("Proprietes/propriete.propri","wt+")
+        arg.write(f"Data De Instalasao: {data}\n")
+        arg.close()
+    #Gera o Arq Configuração
+    if not os.path.isfile("Proprietes/Configurete.conf"):
+        arg = open("Proprietes/Configurete.conf","wt+")
         arg.write("loga=false\n")
         arg.close()
-
-   
+    #Gera o Arq Usuarios
+    if not os.path.isfile("Proprietes/Usuario.user"):
+        arg = open("Proprietes/Usuario.user","wt+")
+        arg.write("======= USUARIOS =======\n")
+        arg.write("Usuario=Root\n")
+        arg.write("Passowrd=@Root0\n")
+        arg.close()
 
    
     print(LerConf())
     return False
 
  
-#def Or(): 
-#    if not os.path.isfile("os\Proprietes\Usuario.user"):
-#        arg = open("Proprietes\Usuario.user")
-#        arg.write("======= USUARIOS =======\n")
-#        arg.write("Usuario=Root\n")
-#        arg.write("Passowrd=@Root0\n")
-#        arg.close()
+
 
