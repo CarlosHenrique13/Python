@@ -14,7 +14,7 @@ def LerConf():
 
 
 #Analisar Se esta todu correto com a aplicação
-def ConfigAnalise(raiz):
+def ConfigAnalise():
     #Pastas e pacote de Configuração
     if not os.path.exists("Proprietes"):
         os.makedirs("ProPrietes")
@@ -32,7 +32,7 @@ def ConfigAnalise(raiz):
     #Gera o Arq Usuarios
     if not os.path.isfile("Proprietes/Usuario.user"):
         arg = open("Proprietes/Usuario.user","wt+")
-        arg.write("======= USUARIOS =======\n")
+        arg.write("------------- USUARIOS -------------\n")
         arg.write("Usuario=Root\n")
         arg.write("Passowrd=@Root0\n")
         arg.close()
@@ -46,7 +46,8 @@ def ConfigAnalise(raiz):
        print(valor)
     for c in range(0,len(comando)):
         for i in range(0,len(comando[c])):
-            print(comando[c][i])
+            pass
+            #print(comando[c][i])
             
 
 

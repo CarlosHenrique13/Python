@@ -6,7 +6,7 @@ import os
 
 #Para Verificar Quando Iniciar o Aplicativo
 def Inicializar():
-    conf = ConfigAnalise(raiz=os.getcwdb)
+    conf = ConfigAnalise()
     print(conf)
     
 

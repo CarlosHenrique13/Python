@@ -16,8 +16,13 @@ def UserPermiter(user,senha):
     linhas = arg.readlines()
     linha = []
     for l in range(0,len(linhas)):
-        linha.append(linhas[l][:len(linhas[l])-1].split())
-    print(linha)
+        linha.append(linhas[l][:len(linhas[l])-1].split("="))
+    print(linha[1],linha[2])
+    for log in range(1,len(linha)):
+        try:
+            print(linha[log+1])
+        except:
+            pass
     return False
 
 #Confirma o Usuario se Existe
@@ -33,9 +38,11 @@ def UesrConfirme():
     senha.place(x=50,y=30)
     envia = Button(userconf,text="Confirma")
     envia.place(x=125,y=60)
-    a = UserPermiter(nome,senha)
-    if a:
+    libera = UserPermiter(nome,senha)
+    if libera == "true":
         return True
+    else:
+        return False
     userconf.mainloop()
 
 
