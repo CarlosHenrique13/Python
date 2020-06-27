@@ -40,10 +40,8 @@ def ConfigAnalise():
    
     #ANALISAR OS COMANDOS DOS ARQUIVO CONF
     comando = LerConf()
-    print(comando[0][1])
-    if comando[0][1] == "true":
+    if comando[0][1] == "true":#Ser o login vor verdadeiro
        valor =  UesrConfirme()
-       print(valor)
     for c in range(0,len(comando)):
         for i in range(0,len(comando[c])):
             pass
