@@ -1,8 +1,10 @@
+from tkinter.messagebox import showinfo
 from tkinter import *
 from config.conf import *
-#from config.user import *
 from complet import*
 import os
+
+showinfo(title='Enfore', message='Não á (.txt)')
 
 #Para Verificar Quando Iniciar o Aplicativo
 def Inicializar():
@@ -10,7 +12,7 @@ def Inicializar():
     print(conf)
     
 
-Inicializar()
+#Inicializar()
 def Interface():
     #Criação da Janela
     janela = Tk()
