@@ -6,6 +6,5 @@ import os
 def Leitor():
     pass
 
-
 def Slid():
     pass

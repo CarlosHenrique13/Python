@@ -40,17 +40,13 @@ def ConfigAnalise():
    
     #ANALISAR OS COMANDOS DOS ARQUIVO CONF
     comando = LerConf()
-    if comando[0][1] == "true":
-        valor =  UesrConfirme()
-        print(f"valor config: {valor}")
-    for c in range(0,len(comando)):
-        for i in range(0,len(comando[c])):
-            pass
-            #print(comando[c][i])
-            
+    valida = False
+    if comando[0][1] == "true":#loga
+        UesrConfirme()
+        valida = True
 
 
-    return f"conf: {True}"
+    return valida
 
  
 
