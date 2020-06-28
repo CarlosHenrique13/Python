@@ -18,9 +18,11 @@ def UserPermiter(user,senha):
     linha = []
     for l in range(0,len(linhas)):
         linha.append(linhas[l][:len(linhas[l])-1].split("="))
+    print(linha,linhas)
     for log in range(1,len(linha)):
         for i in range(len(linha[log])):
             try:
+                print(linha[log][i],linha[log+1][i])
                 if (linha[log][i] == user) and (linha[log+1][i] == senha):
                     print("aprovado")
                     return True
@@ -46,7 +48,7 @@ def UesrConfirme():
     #Resolver erro de dado não recebido
     if libera == False:
         print("Valido")
-        return True
+        
     userconf.mainloop()
 
 
