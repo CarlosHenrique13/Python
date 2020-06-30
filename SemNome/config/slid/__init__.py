@@ -37,12 +37,20 @@ def LeitorSlid(janela):
         arg = open(f"Armazena/Slids/{name}","rt")
         linhas = arg.read()
         texto.insert(1.0,linhas)
+    def Exit():
+        label1.destroy()
+        arg_name.destroy()
+        btn.destroy()
+        texto.destroy()
+        sair.destroy()
 
-
-    Label(janela, text="Nome do Arquivo: ").place(x=5, y=5)
+    label1 = Label(janela, text="Nome do Arquivo: ")
+    label1.place(x=5, y=5)
     arg_name = ttk.Combobox(janela,value=os.listdir("Armazena/Slids/"))
     arg_name.place(x=120, y=5)
     btn = Button(janela, text="Proximo", command=lambda: Ler(arg_name.get()))
     btn.place(x=270, y=5)
     texto = Text(janela, width=40, height=10)
     texto.place(x=5, y=35)
+    sair = Button(janela, text="sair", command=lambda: Exit())
+    sair.place(x=5, y=200)
