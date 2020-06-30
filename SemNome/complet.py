@@ -8,7 +8,7 @@ def BarraMenu(janela):
     #Cria a categooria
     slid = Menu(barraMenu)
     #Itens
-    slid.add_command(label="Escrever",command=lambda: EscreverSlid())
+    slid.add_command(label="Escrever",command=lambda: EscreverSlid(janela))
     slid.add_command(label="Ler",command=lambda: LeitorSlid())
     #Colocar categoria no menu
     barraMenu.add_cascade(label='Slid',menu=slid)
