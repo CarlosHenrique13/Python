@@ -1,5 +1,6 @@
 from tkinter import *
 from config.slid import *
+from config.instalador import *
 import os
 
 #Barra de Menu
