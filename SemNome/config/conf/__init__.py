@@ -39,6 +39,9 @@ def ConfigAnalise():
     #Local dos apps
     if not os.path.exists('Armazena/Programas'):
         os.makedirs('Armazena/Programas')
+    #Local dos arquivos de texto e Documentos
+    if not os.path.exists("Armazena/Slids"):
+        os.makedirs("Armazena/Slids")
 
     #ANALISAR OS COMANDOS DOS ARQUIVO CONF
     comando = LerConf()

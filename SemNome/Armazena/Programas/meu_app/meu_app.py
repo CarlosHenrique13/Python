@@ -1,13 +1,4 @@
-from config.instalador import Instal
-from tkinter import *
+from complet import janela
 
-class MeuApp():
-    def __init__(self):
-        pass
-
-
-
-janela = Tk()
-instalador = Instal()
-instalador.interface(janela,Entry(),0,0)
-janela.mainloop()
+janela.text("texto")
+janela.loop()

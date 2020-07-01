@@ -3,10 +3,6 @@ from tkinter import ttk
 import os
 
 
-if not os.path.exists("Armazena/Slids"):
-    os.makedirs("Armazena/Slids")
-
-
 #Escrever Arquivo
 def EscreverSlid(janela):
     #Cria o Arquivo e Ecrever
