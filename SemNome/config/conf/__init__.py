@@ -36,8 +36,10 @@ def ConfigAnalise():
         arg.write("Usuario=Root\n")
         arg.write("Passowrd=@Root0\n")
         arg.close()
+    #Local dos apps
+    if not os.path.exists('Armazena/Programas'):
+        os.makedirs('Armazena/Programas')
 
-   
     #ANALISAR OS COMANDOS DOS ARQUIVO CONF
     comando = LerConf()
     valida = False

@@ -1,8 +1,23 @@
 import os
+from tkinter import *
 
-if not os.path.exists('Armazena/Programas'):
-    os.makedirs('Armazena/Programas')
 
-def Instalardor():
-    aplicativos_lista = os.listdir('Armazena/Programas')
-    # fr"Armazena\Programas\{aplicativos_lista[0]}\{aplicativos_lista[0]}"
+class Instal():
+    def __init__(self):
+        local = os.getcwd()
+        print(local)
+
+    def interface(self,janela,objeto,x=0,y=0):
+        item = objeto
+        item.place(x=x,y=y)
+        janela.update()
+
+
+
+def Tela(janela):
+    janela_interface = janela
+
+
+def InstalardorInic(janela):
+    pass
+

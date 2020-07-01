@@ -1,7 +1,13 @@
+from config.instalador import Instal
+from tkinter import *
 
-print("ola mundo")
+class MeuApp():
+    def __init__(self):
+        pass
 
-def meu_app():
-    print("aplicativo")
-def tes():
-    print("tes")
+
+
+janela = Tk()
+instalador = Instal()
+instalador.interface(janela,Entry(),0,0)
+janela.mainloop()
