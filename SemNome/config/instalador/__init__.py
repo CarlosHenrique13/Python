@@ -2,30 +2,29 @@ import os
 from tkinter import *
 
 
-
-
-#Para Criação de Apps
 class Instal():
-    def __init__(self,janela):
-        self.janela = janela
+    def __init__(self):
         local = os.getcwd()
         print(local)
 
-    def interface(self,objeto,x=0,y=0):
+    def interface(self,janela,objeto,x=0,y=0):
         item = objeto
         item.place(x=x,y=y)
-        self.janela.update()
+        janela.update()
 
 
 
-#
+def Tela(janela):
+    janela_interface = janela
+
+
 def InstalardorInic(janela):
-    Label(janela,text="oi").place(x=0,y=0)
-    tela = Instal(janela)
-    tela.interface(Entry(janela))
-    arg = open("Janela.txt","wt+")
-    arg.write(f"{janela}\n")
-    arg.close()
-#Inicialização dos app
-def IniciApps():
-    pass
+    apps  = os.listdir("Armazena/Programas")
+    programas = []
+    for c in range(0,len(apps)):
+        programas.append(f"Armazena\Programas\{apps[c]}")    
+    
+    for c in range(0,len(apps)):
+        print(f"{programas[c]}\{apps[c]}")
+        btn = Button(janela,text=apps[c],command=lambda: os.startfile(f"{os.getcwd()}\{programas[c]}\{apps[c]}"))
+        btn.grid(row=0,column=c)
