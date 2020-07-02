@@ -20,6 +20,7 @@ def BarraMenu(janela):
 def Interface():
     #Criação da Janela
     janela = Tk()
+    InstalardorInic(janela)
     BarraMenu(janela)
     janela.title("Projeto Nome")
     janela.geometry("500x400")

@@ -19,5 +19,8 @@ def Tela(janela):
 
 
 def InstalardorInic(janela):
-    pass
+    apps  = os.listdir("Armazena/Programas")
+    programas = []
+    for c in range(0,len(apps)):
+        programas.append(f"Armazena/Programas/{apps[c]}/{apps[c]}")    
 
