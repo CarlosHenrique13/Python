@@ -7,5 +7,6 @@ def Inicializar():
     conf = ConfigAnalise()
     if conf == False:
         Interface()
+    print("Finalizaddo")
 
 Inicializar()
