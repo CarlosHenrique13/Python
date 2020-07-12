@@ -1,0 +1,4 @@
+========================== Regras ==========================
+-------------- Comentarios --------------
+1° E Permitido so um comentario de multiplas linhas
+2° Comentario de uma unica linha são ilimitados
