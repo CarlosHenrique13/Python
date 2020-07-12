@@ -7,8 +7,8 @@ import os
 
 
 #Variaveis
-DIRETORIA = "apps"
-NOMES = os.listdir("apps")
+DIRETORIA = "Armazena"
+NOMES = os.listdir("Armazena")
 
 
 #Busca das Aplicação dentro da diretoria
