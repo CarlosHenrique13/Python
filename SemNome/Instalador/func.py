@@ -79,7 +79,7 @@ def Buscar(raiz_apps=[]):
             print("[Mont_shinc] Erro Inesperado")
 
 
-    print("===========================================================================================================")
+    print("================================================= Funções =================================================")
     #Controle
     fun1 = AppsConteudo(raiz_apps)
     fun2 = Busca_shinc(fun1,raiz_apps)
