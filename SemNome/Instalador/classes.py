@@ -8,6 +8,7 @@ class Instal_SHINC():
         self.diret = diretoria
         self.names = nomes
         self.arq = arquivos
+        print("=============================================== Instal_SHINC ===============================================")
 
     #Ler os Arquivos
     def LerArg(self):
@@ -20,9 +21,7 @@ class Instal_SHINC():
                 temp.append(linhas[l][:len(linhas[l])-1])
             arquivos[self.names[c]] = temp
         print(f"[LerArg] Dicionario: {arquivos}")
-        print("-------------------------------------------------------------------------------------------------------")
         return arquivos
-
 
     #Separa os Comentario
     def SeparaComentario(self,ler_arg):
@@ -74,11 +73,98 @@ class Instal_SHINC():
         return comandos
 
     # Valida os Comandos do Arquivo
-    def ValidaArg(self, ler_arg):
-        pass
+    def ExecutaComando(self,janela,comand):
+        #Programa sendo separado para cada comando
+
+
+        comandos = Comandos(self.names,janela,comand)#,f"meuapp\meuapp.py")
+        butaos = comandos.Validar()
+        comando = {}
+        #Descompact os botaos
+        for c in range(0,len(self.names)):
+            temp0 = []
+            for l in range(0,len(butaos[self.names[c]])):
+                for i in range(0, len(butaos[self.names[c]][l])):
+                    for f in range(0,len(butaos[self.names[c]][l][i])):
+                        temp0.append(butaos[self.names[c]][l][i][f])
+
+            comando[self.names[c]] = temp0
+        return  comando
+
 
     #Listar os arquivo que estão istalados
     def ArgApps(self):
         pass
 
+    print("-------------------------------------------------------------------------------------------------------")
 
+
+#Executador de comandos da Classe Instal_SHINC
+class Comandos():
+    # Importação de pacotes
+    import os
+    from tkinter import Button
+
+    #Main
+    def __init__(self,nomes,janela,comandos):#diretoria):
+        self.name = nomes
+        self.comand = comandos
+        #self.direct = diretoria
+        self.tela = janela
+        print("==================================== Comandos ====================================")
+
+    #Valida os Comandos
+    def Validar(self):
+        apps = {}
+        comando = {}
+        #Descompactar para saber quandos itens estão no comando
+        for c in range(0,len(self.comand)):
+            temp = []
+            for l in range(0,len(self.comand[self.name[c]])):
+                temp.append(self.comand[self.name[c]][l].split(" "))
+                #print(self.comand[self.name[c]][l].split(" "),self.name[c])
+            apps[self.name[c]] = temp
+
+        #print(apps)
+        for c in range(0,len(apps)):
+            temp = []
+            for l in range(0,len(apps[self.name[c]])):
+                #print(self.name[c],len(apps[self.name[c]][l]),apps[self.name[c]][l])
+                if len(apps[self.name[c]][l]) == 1:
+                    print(self.name[c],self.ComandSimple(apps[self.name[c]][l]))
+                else:
+                     #print(self.name[c],self.ComandCaretes(apps[self.name[c]][l],self.name[c]))
+                     temp.append(self.ComandCaretes(apps[self.name[c]][l], self.name[c]))
+            comando[self.name[c]] = temp
+        return comando
+
+    # Comandos Simples
+    def ComandSimple(self,comando):
+        return "Vazio"
+
+    # Comandos com mais de um carater
+    def ComandCaretes(self,comando,name):
+        #print(len(comando),comando,name)
+        comandos = []
+        #Comandos
+        if comando[0] == "@Start":
+            comandos.append(self.Start(name,comando[1],fr"{name}\{name}.py"))
+        elif comando[0] == "@Name":
+            comandos.append(self.Name(comando[1]))
+        return comandos
+
+    #Comando Start
+    def Start(self,name,valida,diretoria):
+        comando = []
+        if valida.lower() == "on":
+            comando.append(self.Button(self.tela,text=name,command=lambda: self.os.startfile(fr'apps\{diretoria}')))
+        elif valida.islower() == "of":
+            print("[Start]Não foi executado o comando @Start")
+        else:
+            print("[Start] Comando prenxido incorretamente")
+        return comando
+    #Comando Name
+    def Name(self,comand):
+        comando = []
+        comando.append(comand)
+        return comando
