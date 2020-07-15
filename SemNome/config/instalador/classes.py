@@ -68,7 +68,7 @@ class Instal_SHINC():
                    pass
                 except(IndexError):
                     comandos[self.names[c]] = None
-                    print(f'[LimpComentario] Erro Arquivos Vazio {self.names[c]}.shinc')
+                    print(f'[LimpComentario] Erro Arquivos Vazio {self.names[c]}.inst')
         print(f'[LimpComentario] Dicionario: {comandos}')
         return comandos
 

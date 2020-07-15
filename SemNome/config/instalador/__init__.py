@@ -67,7 +67,7 @@ def Buscar(pasta, raiz_apps):
                         for extensao in range(0, int(len(arq_extensao[nomes[c]][intes]) / 2)):
                             # print(f"[Mont_shinc] Pasta: {nomes[c]} Arquivo: {arq_extensao[nomes[c]][intes][extensao]}."
                             #     f"{arq_extensao[nomes[c]][intes][extensao+1]}")
-                            if arq_extensao[nomes[c]][intes][extensao + 1] == "shinc":
+                            if arq_extensao[nomes[c]][intes][extensao + 1] == "inst":
                                 args[nomes[
                                     c]] = f'{arq_extensao[nomes[c]][intes][extensao]}.{arq_extensao[nomes[c]][intes][extensao + 1]}'
                     except:
