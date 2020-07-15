@@ -1,5 +1,5 @@
 # Pacotes Usados
-from classe.apps.instalador.classes import *
+from config.instalador.classes import *
 import os
 
 

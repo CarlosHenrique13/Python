@@ -1,5 +1,6 @@
 from tkinter import *
 from config.slid import *
+from config.instalador import *
 import os
 
 
@@ -20,27 +21,12 @@ def BarraMenu(janela):
 def Interface():
     #Criação da Janela
     janela = Tk()
-    InstalardorInic(janela)
+    Instlador(janela,'Armazena/Programas')
     BarraMenu(janela)
+
     janela.title("Projeto Nome")
     janela.geometry("500x400")
     janela.mainloop()
     return True
 
 
-
-class Instalador:
-    def __init__(self):
-        self.janela = Tk()
-        self.janela.title("Teste")
-
-
-    def text(self,texto):
-        Label(self.janela,text=texto).place(x=5,y=5)
-
-    def loop(self):
-        self.janela.mainloop()
-
-janela = Instalador()
-janela.text("oi")
-os.system("python Armazena/Programas/meu_app/meu_app.py")
