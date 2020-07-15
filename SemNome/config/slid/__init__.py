@@ -1,6 +1,8 @@
 from tkinter import *
 from tkinter import ttk
 import os
+#Local
+from config.instalador import Instlador,clear
 
 
 #Escrever Arquivo
@@ -15,7 +17,9 @@ def EscreverSlid(janela):
         btn.destroy()
         escrever.destroy()
         sair.destroy()
+        Instlador(janela, 'Armazena/Programas')
 
+    clear(janela)
     nome_label = Label(janela,text="Nome do Arquivo: ")
     nome_label.place(x=5,y=5)
     arg_name = Entry(janela)
@@ -39,7 +43,9 @@ def LeitorSlid(janela):
         btn.destroy()
         texto.destroy()
         sair.destroy()
+        Instlador(janela, 'Armazena/Programas')
 
+    clear(janela)
     label1 = Label(janela, text="Nome do Arquivo: ")
     label1.place(x=5, y=5)
     arg_name = ttk.Combobox(janela,value=os.listdir("Armazena/Slids/"))

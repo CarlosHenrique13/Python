@@ -3,6 +3,12 @@ from config.instalador.classes import *
 import os
 
 
+def clear(janela):
+    list = janela.grid_slaves()
+    print(list)
+    for l in list:
+        l.destroy()
+
 def Buscar(pasta, raiz_apps):
     def AppsConteudo(pasta_raiz, pasta):
         """
@@ -100,8 +106,10 @@ def Instlador(janela, DIRETORIA):
     conteudo = class_Instalador.LerArg()
     posissao = class_Instalador.SeparaComentario(conteudo)
     comandos = class_Instalador.LimpComentario(conteudo, posissao)
-
+    clear(janela)
     for c in range(0, len(NOMES)):
         button = class_Instalador.ExecutaComando(janela, comandos)
-        button[NOMES[c]][0].grid(row=1,column=c)
+        button[NOMES[c]][0].grid(row=c,column=0)
+
+
 

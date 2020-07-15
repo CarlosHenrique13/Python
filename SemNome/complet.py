@@ -14,6 +14,7 @@ def BarraMenu(janela):
     slid.add_command(label="Ler",command=lambda: LeitorSlid(janela))
     #Colocar categoria no menu
     barraMenu.add_cascade(label='Slid',menu=slid)
+    barraMenu.add_cascade(label='apps',command=lambda: Instlador(janela,'Armazena/Programas'))
     #configuração da janela *unico
     janela.config(menu=barraMenu)
 
@@ -23,7 +24,6 @@ def Interface():
     janela = Tk()
     Instlador(janela,'Armazena/Programas')
     BarraMenu(janela)
-
     janela.title("Projeto Nome")
     janela.geometry("500x400")
     janela.mainloop()
