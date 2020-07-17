@@ -159,7 +159,7 @@ class Comandos():
     def Start(self,name,valida,diretoria):
         comando = []
         if valida.lower() == "on":
-            comando.append(self.Button(self.tela,text=name,command=lambda: self.os.startfile(fr'{self.direct}\{diretoria}')))
+            comando.append(self.Button(self.tela,text=name,height=5,width=7,command=lambda: self.os.startfile(fr'{self.direct}\{diretoria}')))
         elif valida.islower() == "of":
             print("[Start]Não foi executado o comando @Start")
         else:
