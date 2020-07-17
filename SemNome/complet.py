@@ -3,6 +3,13 @@ from config.slid import *
 from config.instalador import *
 import os
 
+#Documentação
+def Sobre(janela):
+    clear(janela)
+    Label(janela,text='Link: http://syshen.epizy.com/index.html').grid(row=0,column=0)
+    Label(janela,text='Criador: Carlos Henrique Alves dos Santos').grid(row=1,column=0)
+    Label(janela,text='Versão: 0.0.1').grid(row=2,column=0)
+    Label(janela,text='©SysHen').grid(row=2,column=1)
 
 #Barra de Menu
 def BarraMenu(janela):
@@ -15,6 +22,7 @@ def BarraMenu(janela):
     #Colocar categoria no menu
     barraMenu.add_cascade(label='Slid',menu=slid)
     barraMenu.add_cascade(label='apps',command=lambda: Instlador(janela,'Armazena/Programas'))
+    barraMenu.add_cascade(label='Sobre',command=lambda: Sobre(janela))
     #configuração da janela *unico
     janela.config(menu=barraMenu)
 

@@ -165,6 +165,7 @@ class Comandos():
         else:
             print("[Start] Comando prenxido incorretamente")
         return comando
+
     #Comando Name
     def Name(self,comand):
         comando = []
