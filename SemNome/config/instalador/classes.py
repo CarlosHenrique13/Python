@@ -2,6 +2,7 @@
 
 #Classe para leitura dos aruivos
 class Instal_SHINC():
+    import os.path
     #Main
     def __init__(self,diretoria,nomes,arquivos):
         #Variaveis Globais
@@ -146,7 +147,10 @@ class Comandos():
         comandos = []
         #Comandos
         if comando[0] == "@Start":
-            comandos.append(self.Start(name,comando[1],fr"{name}\{name}.py"))
+            if f'{name}.exe' in  self.os.listdir(f'{self.direct}\{name}'):
+                comandos.append(self.Start(name, comando[1], fr"{name}\{name}.exe"))
+            else:
+                comandos.append(self.Start(name,comando[1],fr"{name}\{name}.py"))
         elif comando[0] == "@Name":
             comandos.append(self.Name(comando[1]))
         return comandos
