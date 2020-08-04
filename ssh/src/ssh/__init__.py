@@ -2,6 +2,14 @@ from paramiko import SSHClient
 import paramiko
 
 def Conect(saida,host,user,pasw):
+    """
+    -> Conexão SSH
+    :param saida: Tela para informação
+    :param host: ip ou domínio para coneção
+    :param user: Usuario que for se conectar
+    :param pasw: Senha corespondente ao usuario
+    :return:
+    """
     p = ""
     for c in range(0, len(pasw)):
         p += "*"
