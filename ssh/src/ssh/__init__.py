@@ -1,3 +1,4 @@
+from tkinter import END
 from tkinter.messagebox import showinfo
 from paramiko import SSHClient
 import paramiko
@@ -17,25 +18,30 @@ def Conect(text,host,user,pasw):
         p = ""
         for c in range(0, len(pasw)):
             p += "*"
-        text["text"] = f"Host: {host} User: {user} Passowd: {p}\n"
-        text["fg"] = "green"
-
         #Conexão
         ssh = SSHClient()
         ssh.load_system_host_keys()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         ssh.connect(hostname=host, username=user, password=pasw)
+        text["text"] = f"Host: {host} User: {user} Passowd: {p}\n"
+        text["fg"] = "green"
         #Envio de Comando
         return ssh
     except:
         showinfo(title='SSH', message='Não foi possivel se conectar')
 
 
-def Enviar(ssh,cmd):
+def Enviar(ssh,cmd,retorno,texto):
     try:
         entrada, saida, erro = ssh.exec_command(cmd)
-        print(saida.readlines())
-        print(erro.readlines())
+        retorno.insert(0.0,saida.readlines())
+        retorno.insert(0.0,erro.readlines())
+        if cmd == "exit\n":
+            texto["text"] = "Conectado: 127.0.0.1"
+            texto["fg"] = "black"
+            ssh.close()
+            retorno.delete('1.0',END)
+            print("fim")
     except:
         pass
 

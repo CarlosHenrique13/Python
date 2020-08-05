@@ -11,10 +11,11 @@ ssh = []
 def env(p):
     if str(janela.focus_get()) == ".!text":
         if p.keysym == "Return":
-            try:
-                Enviar(ssh[0],saida.get("1.0","end-1c"))
-            except(IndexError):
-                showinfo(title='SSH', message='Não foi encontrado o servido')
+            #try:
+                print(ssh)
+                Enviar(ssh[0],saida.get("1.0","end-1c"),saida,conetc)
+            #except(IndexError):
+                #showinfo(title='SSH', message='Não foi encontrado o servido')
         if p.keysym == "Delete":
             saida.delete('1.0', END)
     else:
@@ -24,7 +25,7 @@ def env(p):
             saida.insert(END,"\n")
 
 def onclik():
-    return Conect(conetc, host.get(), user.get(), pasw.get())
+    return ssh.append(Conect(conetc, host.get(), user.get(), pasw.get()))
 
 #Janela
 janela = Tk()
