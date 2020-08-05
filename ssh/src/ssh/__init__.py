@@ -45,3 +45,17 @@ def Enviar(ssh,cmd,retorno,texto):
     except:
         pass
 
+def Cmd(host,user,pasw):
+    ssh = SSHClient()
+    ssh.load_system_host_keys()
+    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    ssh.connect(hostname=host, username=user, password=pasw)
+    while True:
+        cmd = str(input("ssh>> "))
+        entrada, saida, erro = ssh.exec_command(cmd)
+        print(saida.readlines())
+        print(erro.readlines())
+        if cmd == "exit":
+            ssh.close()
+            break
+    print("Finalizado")
