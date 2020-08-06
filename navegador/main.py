@@ -3,6 +3,12 @@ from PyQt5.QtWebEngineWidgets import QWebEngineView
 from PyQt5.QtCore import QUrl, QSize
 from PyQt5.QtGui import QIcon, QPixmap
 
+#Variaveis
+home_url     = "https://www.google.com"
+facebook_url = "https://www.facebook.com"
+twitter_url  = "https://www.twitter.com"
+youtube_url  = "https://www.youtube.com"
+
 
 application = QApplication([])
 
