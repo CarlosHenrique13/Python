@@ -101,5 +101,39 @@ twiter_button.setStyleSheet("background-color: transparent")
 twiter_button.setIcon(twiter_button_icon)
 
 
+def home(mainWindow):
+    web.load(QUrl(home_url))
+
+def reload(mainWindow):
+    web.reload()
+
+def back(mainWindow):
+    web.back()
+
+def forward(mainWindow):
+    web.forward()
+
+def go(mainWindow):
+    go_url = go_line.text()
+    web.load(QUrl(go_url))
+
+def facebook(mainWindow):
+    web.load(QUrl(facebook_url))
+
+def twitter(mainWindow):
+    web.load(QUrl(twitter_url))
+
+def youtube(mainWindow):
+    web.load(QUrl(youtube_url))
+
+def Downloads(item):
+    item.accept()
+    msg = QMessageBox()
+    msg.setWindowTitle("Dowloads")
+    msg.setText("O seu download foi iniciado")
+    msg.setIcon(QMessageBox.Warning)
+    msg.exec_()
+
+
 mainWindow.show()
 application.exec_()
