@@ -135,5 +135,17 @@ def Downloads(item):
     msg.exec_()
 
 
+#Adicionar função no butão
+home_button.clicked.connect(home)
+reload_button.clicked.connect(reload)
+back_button.clicked.connect(back)
+forward_button.clicked.connect(forward)
+facebook_button.clicked.connect(facebook)
+twiter_button.clicked.connect(twitter)
+youtube_button.clicked.connect(youtube)
+go_button.clicked.connect(go)
+web.page().profile().downloadRequested.connect(Downloads)
+
+
 mainWindow.show()
 application.exec_()
