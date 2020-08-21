@@ -15,3 +15,17 @@ class FTP():
             return handler
         except Exception:
             print('[-][FTP]Não foi possivel conectar ao servidor FTP Verefique se a internet')
+
+    def ListDirectories(self, ftp):
+        """
+        -> Listar Diretorias
+        :param ftp: Servido Conectado
+        :return: Pastas e Arquivos do Servido
+        """
+        log = []
+        ftp.retrlines('LIST', callback=log.append)
+        files = (line.rsplit(None, 1)[1] for line in log)
+        arqs = []
+        for f in list(files):
+            arqs.append(f)
+        return arqs
