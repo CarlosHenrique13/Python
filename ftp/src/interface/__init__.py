@@ -10,7 +10,7 @@ class Interface():
 
     def Buton(self,text_button,pos,func):
         """
-        -> Criar Buttons 
+        -> Criar Buttons
         :param text_button: Titulo para o butão
         :param pos: Posição do botão
         :param func: Função que o botão vai ter
