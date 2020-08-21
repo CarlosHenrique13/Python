@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: http-client
+Version: 0.1.22
+Summary: Fast and robust HTTP client based on PyCurl
+Home-page: https://github.com/huynhminhson/http_client
+Author: Minh Son Huynh
+Author-email: minhsonftu@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
