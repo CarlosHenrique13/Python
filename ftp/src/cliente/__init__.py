@@ -67,3 +67,16 @@ class FTP():
         for f in list(files):
             arqs.append(f)
         return arqs
+
+    def MoveToDir(self, handler, Dir):
+        """
+        -> Mover para Diretoria
+        :param handler: Servido FTP
+        :param Dir: Local para onde sera movido o arquivo no FTP
+        :return: None
+        """
+        try:
+            handler.cwd(Dir)
+            print(f'[+][FTP]Movido arquivo: {Dir}')
+        except Exception:
+            print('[-][FTP]Não foi possivel acessar o diretorio!!')
