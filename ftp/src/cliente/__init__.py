@@ -34,7 +34,26 @@ class FTP():
             print('[-][FTP]Erro ao abaixar o arquivo ')
         Dfile.close()
         print('[+][FTP]Download feito com sucesso!')
-        
+
+    def Upload(self, handler, name, path, local=dir):
+        """
+        -> Upload
+        :param handler: Servidor FTP
+        :param name: Nome do arquivo
+        :param path: Nome do arquivo
+        :param local: Local para armazenar o arquivo
+        :return: None
+        """
+        try:
+            handler.cwd(local)
+            handler.storbinary('STOR ' + name, open(path, 'rb'), 1024)
+            print(f'[+][FTP]Upload {name} feito com sucesso.')
+        except:
+
+            print('[-][FTP]Erro ao subir o arquivo ao servidor')
+            return None
+        print('[+][FTP]Operação efetuada com sucesso :)')
+
     def ListDirectories(self, ftp):
         """
         -> Listar Diretorias
