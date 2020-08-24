@@ -1,3 +1,6 @@
+from ftplib import FTP
+
+
 class FTP():
     def Client(self, ip='', login='', password='', port=2121):
         """
@@ -16,6 +19,22 @@ class FTP():
         except Exception:
             print('[-][FTP]Não foi possivel conectar ao servidor FTP Verefique se a internet')
 
+    def Download(self, handler, dire, filename):
+        """
+        -> Downloads FTP
+        :param handler: Servido FTP
+        :param dire: Diretoria no servido para o download
+        :param filename: Nome do arquivo que sera baixado com extensão
+        :return: None
+        """
+        Dfile = open(f'{dire}/{filename}', 'wb')
+        try:
+            handler.retrbinary('RETR ' + filename, Dfile.write)
+        except:
+            print('[-][FTP]Erro ao abaixar o arquivo ')
+        Dfile.close()
+        print('[+][FTP]Download feito com sucesso!')
+        
     def ListDirectories(self, ftp):
         """
         -> Listar Diretorias
