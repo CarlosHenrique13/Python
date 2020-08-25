@@ -80,3 +80,16 @@ class FTP():
             print(f'[+][FTP]Movido arquivo: {Dir}')
         except Exception:
             print('[-][FTP]Não foi possivel acessar o diretorio!!')
+    
+    def MakeDir(self, handler, name):
+        """
+        -> Criar Diretorio
+        :param handler: Servido FTP
+        :param name: Nome do Diretorio
+        :return: None
+        """
+        try:
+            handler.mkd(name)
+            print(f'[+][FTP]Diretorio {name} criado com sucessor.')
+        except Exception:
+            print('[-][FTP]Não foi possivel criar o diretorio ela ja existe!!')
