@@ -93,3 +93,16 @@ class FTP():
             print(f'[+][FTP]Diretorio {name} criado com sucessor.')
         except Exception:
             print('[-][FTP]Não foi possivel criar o diretorio ela ja existe!!')
+
+    def DelFile(self, handler, name):
+            """
+            -> Deletar Arquivo
+            :param handler: Servido FTP
+            :param name: Nome do arquivo que deseja ser deletado
+            :return: None
+            """
+            try:
+                handler.delete(name)
+                print('[+][FTP]O arquivo foi deletado')
+            except Exception:
+                print('[-][FTP]não foi possivel deletar o arquivo ou ele é inexistente')
