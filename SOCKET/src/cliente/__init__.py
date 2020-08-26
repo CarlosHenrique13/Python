@@ -16,3 +16,5 @@ def Client(self,host,porta=8585):
             print("[-][TCP]Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente")
         except():
             pass
+            
+            
