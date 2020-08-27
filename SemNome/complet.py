@@ -1,6 +1,7 @@
 from tkinter import *
 from config.slid import *
 from config.instalador import *
+from time import strftime
 import os
 
 #Documentação
@@ -28,10 +29,21 @@ def BarraMenu(janela):
 
 #Interface do usuario
 def Interface():
+    # Relogio
+    def tictac():
+        agora = strftime('%H:%M:%S')
+        if relogio['text'] != agora:
+            relogio['text'] = agora
+        relogio.after(100, tictac)
     #Criação da Janela
     janela = Tk()
     Instlador(janela,'Armazena/Programas')
     BarraMenu(janela)
+    #Relogio na Tela
+    relogio = Label(janela, text='')
+    relogio['text'] = strftime('%H:%M:%S')
+    relogio.place(x=450, y=0)
+    tictac()
     janela.title("Projeto Nome")
     janela.geometry("500x400")
     janela.mainloop()
