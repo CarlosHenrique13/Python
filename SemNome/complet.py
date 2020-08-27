@@ -23,6 +23,8 @@ def BarraMenu(janela):
     #Colocar categoria no menu
     barraMenu.add_cascade(label='Slid',menu=slid)
     barraMenu.add_cascade(label='apps',command=lambda: Instlador(janela,'Armazena/Programas'))
+    barraMenu.add_cascade(label="Atualizar",command=lambda: Instlador(janela,'Armazena/Programas'))
+    barraMenu.add_cascade(label="Configuração")
     barraMenu.add_cascade(label='Sobre',command=lambda: Sobre(janela))
     #configuração da janela *unico
     janela.config(menu=barraMenu)
