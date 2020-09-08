@@ -1,3 +1,10 @@
+import os, sys
+dirpath = os.getcwd()
+sys.path.append(dirpath)
+if getattr(sys, "frozen", False):
+    os.chdir(sys._MEIPASS)
+###
+
 import pygame
 import random
 from player import Player
