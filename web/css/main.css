@@ -18,3 +18,42 @@ p {
     text-align: justify;
     font-size: 18px;
 }
+/* Menu*/
+nav#menur{
+    display: block;
+    padding: 10px;
+    float: right; 
+}
+.menu{
+    list-style:none; 
+    float: left; 
+    margin: 2px;
+}
+.menu li{
+    position: relative; 
+    float: left; 
+}
+.menu li a{
+    color:rebeccapurple; 
+    text-decoration:none; 
+    padding: 5px; 
+    display:block;
+} 
+.menu li a:hover{
+    background: rgb(183, 141, 202); 
+    color: rebeccapurple; 
+    text-shadow:1px 1px 5px rebeccapurple; 
+}
+.menu li  ul{
+    position: absolute; 
+    top:25px; 
+    left:0;
+    display:none;
+}
+.menu li:hover ul, .menu li.over ul{
+    display:block;
+}
+.menu li ul li{
+    display:block; 
+    width:150px;
+}
