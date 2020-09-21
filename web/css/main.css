@@ -4,7 +4,7 @@ body {
 div#corpo {
     width: 800px;
     margin: auto;
-    padding: 5px;
+    padding: 10px;
     border-radius: 10px;
     background-color: white;
     box-shadow: 1px 2px 2px rgb(0,0,0,0.5);
@@ -57,4 +57,30 @@ nav#menur{
     background: rgb(136, 228, 136); 
     display:block; 
     width:150px;
+}
+/* Tabela Simples */
+table {
+    margin: auto;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(202, 233, 202);
+    box-shadow: 1px 2px 2px rgb(0,0,0,0.5);
+}
+caption {
+    font-size: 18px;
+}
+tr {
+    background-color: white;
+}
+td {
+    padding: 10px;
+    border-radius: 4px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+}
+td a {
+    color: green;
+}
+td a:hover {
+    text-shadow: 1px 1px 2px rgb(54, 189, 54);
 }
