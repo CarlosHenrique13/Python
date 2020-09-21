@@ -34,15 +34,15 @@ nav#menur{
     float: left; 
 }
 .menu li a{
-    color:rebeccapurple; 
+    color:green; 
     text-decoration:none; 
     padding: 5px; 
     display:block;
 } 
 .menu li a:hover{
-    background: rgb(183, 141, 202); 
-    color: rebeccapurple; 
-    text-shadow:1px 1px 5px rebeccapurple; 
+    background: rgb(136, 228, 136); 
+    color: green; 
+    text-shadow:1px 1px 5px rgb(11, 151, 11); 
 }
 .menu li  ul{
     position: absolute; 
@@ -54,6 +54,7 @@ nav#menur{
     display:block;
 }
 .menu li ul li{
+    background: rgb(136, 228, 136); 
     display:block; 
     width:150px;
 }
