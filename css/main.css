@@ -1,0 +1,144 @@
+/*  ================
+        PRINCIPAL
+    ================
+*/
+body {
+    background-color: #071013;
+    --cor-fundo: #262c2e;
+    --cor-letra: #ffffff;
+    --cor-titulo: #ffffff;
+    font-family: 'Noto Sans TC', sans-serif;
+
+}
+h1{
+    color: white;
+    font-family: 'Playfair Display', serif;
+}
+/* Tabelas Codigo Universal*/
+table caption{
+    font-family: 'Playfair Display', serif;
+}
+table img{
+    max-width: 25%;
+    max-height: 25%;
+}
+table tr td{
+    font-size: 100%;
+}
+table a{
+    color: white;
+    text-decoration: none;
+}
+table a:hover{
+    font-weight: bold;
+}
+/* Diviçoes */
+.esquerda{
+    position: relative;
+    width: 43%;
+    height: 40%;
+    padding: 2%;
+    float: left;
+    border-right: solid 1px #7A4419;
+}
+.direita{
+    position: relative;
+    width: 43%;
+    height: 40%;
+    padding: 2%;
+    float: left;
+}
+/* Incrementos */
+.linha {
+    border-bottom: 2px solid #7A4419;
+}
+/* Troca de Imagens */
+.imageSena .imgaeRotatorio {
+    display: none;
+}
+.imageSena .imageRolate {
+    border-radius: 10px;
+    text-align: center;
+    margin: auto;
+}
+
+/* ===============
+    Rede Social
+   ===============
+*/
+.rede_social{
+    margin-bottom: 15%;
+}
+.rede_social tr{
+    background: transparent;
+    color: white;
+}
+.rede_social tr td img{
+    width: 50%;
+}
+.rede_social tr td {
+    width: 50%;
+}
+
+/* =======================
+    Certificados Imagens
+   =======================
+*/
+.img_btn{
+    background: transparent;
+}
+.img_btn button {
+    background: transparent;
+    border-radius: 5px;
+    padding: 2%;
+    border: none;
+}
+.img_btn img{
+    border-radius: 5px;
+    width: 90%;
+}
+.img_btn img:hover{
+    box-shadow: 5px 5px#5c6d707a ;
+}
+
+
+
+/* =====================
+    Redimensionamento
+   =====================
+*/
+@media screen and (min-width: 700px) {
+    table tr td{
+        font-size: 18px;
+    }
+    p{
+        font-size: 18px;
+    }
+    .img_btn button{
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 790px) {
+    .esquerda{
+        width: 100%;
+        height: 40%;
+    }
+    .direita{
+        width: 100%;
+        height: 40%;
+    }
+    table{
+        margin: auto;
+    }
+    table img{
+        max-width: 25%;
+        max-height: 25%;
+    } 
+    .rede_social{
+        margin-bottom: 2%;
+    }
+    .img_btn button{
+        width: 40%;
+    } 
+}
