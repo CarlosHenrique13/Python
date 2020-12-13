@@ -1,4 +1,5 @@
 import os, sys
+from time import sleep
 dirpath = os.getcwd()
 sys.path.append(dirpath)
 if getattr(sys, "frozen", False):
@@ -61,15 +62,27 @@ if __name__ == "__main__":
                     newAsteroid = Asteroide(objectGroup,asteroidGroup)
                     print("New Asteroide")
 
-            collisions = pygame.sprite.spritecollide(player,asteroidGroup,False, pygame.sprite.collide_mask)
+            #Colição entre play e asteroide
+            collisions = pygame.sprite.spritecollide(player,asteroidGroup,False,pygame.sprite.collide_mask)
 
+            hits = pygame.sprite.groupcollide(shotGroup,asteroidGroup,True,True,pygame.sprite.collide_mask)
+            
+            #Animação para o exploção
+            if hits:
+                pass
+                
+            #Game Over
             if collisions:
                 print("Gamer Over")
                 gameover = True
-
-            hits = pygame.sprite.groupcollide(shotGroup,asteroidGroup,True,True,pygame.sprite.collide_mask)
+                
 
         # Draw:
         display.fill([255,255,255])
-        objectGroup.draw(display)
+        #Game Over
+        if not gameover:
+            objectGroup.draw(display)
+        else:
+            #Depois de Perder
+            display.fill([0,0,0])
         pygame.display.update()
