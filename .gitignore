@@ -1,7 +1,10 @@
 *.exe
 JogoAsteroide/.idea/
 JogoAsteroide/venv/
+JogoAsteroide/__pycache__/
 ftp/.idea/
 navegador/.idea/
+navegador/__pycache__/
 SemNome/.idea/
+SemNome/__pycache__/
 ssh/.idea/
