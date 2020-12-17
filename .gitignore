@@ -1,3 +1,7 @@
 *.exe
 JogoAsteroide/.idea/
 JogoAsteroide/venv/
+ftp/.idea/
+navegador/.idea/
+SemNome/.idea/
+ssh/.idea/
