@@ -1,1 +1,3 @@
- *.xml .iml .exe 
+*.exe
+JogoAsteroide/.idea/
+JogoAsteroide/venv/
