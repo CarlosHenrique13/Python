@@ -5,16 +5,30 @@
 body {
     background-color: #45462A;
     --cor-fundo: #519872;
-    --cor-letra: black;
-    --cor-titulo: black;
+    --cor-letra: white;
+    --cor-titulo: white;
     font-family: 'Noto Sans TC', sans-serif;
 
 }
 h1{
-    color: black;
+    color: var(--cor-titulo);
     font-family: 'Playfair Display', serif;
 }
-
+h3{
+    font-family: 'Playfair Display', serif;
+}
+span{
+    font-weight: bold;
+}
+a{
+    font-size: 20px;
+    text-decoration: none;
+    color: #7A4419;
+}
+a:hover{
+    font-size: 22px;
+    font-weight: bold;
+}
 /* Tabelas Codigo Universal*/
 table{
     padding: -5px;
@@ -41,15 +55,23 @@ table a:hover{
 /* Diviçoes */
 .esquerda{
     position: relative;
-    width: 43%;
+    width: 46%;
     height: 40%;
     padding: 2%;
     float: left;
     border-right: solid 1px black;
 }
+.esquerda img{
+    border-radius: 5px;
+    width: 45%;
+}
+.esquerda img:hover{
+    width: 48%;
+    box-shadow: 2px 2px #7A4419;
+}
 .direita{
     position: relative;
-    width: 43%;
+    width: 46%;
     height: 40%;
     padding: 2%;
     float: left;
