@@ -9,8 +9,23 @@ Criado: **Carlos Henrique A. dos Santos**
  Pacotes: **pygame; random; os; sys; time.** <br> 
  Jogo asteróide e baseado em quem fica mais tempo vivo com a maior pontuação sendo um jogo singler player.
 
-## FTP
-
-## SSH
-
+## Navegador
+ Python: **3.5.7**<br>
+ Pacotes: **PyQt5.**<br>
+ Este navegador e uma projeto para fazer pesquisas no google.
 ## SemNome
+ Python: **3.7.5**<br>
+ Pacotes: **tkinter; time; os; datetime.**<br>
+ Este aplicativo permite que você posa adicionar mais aplicativos dentro dele e tem um bloco de notas para que você possa escrever.
+## Socket
+ Python: **3.7.5**<br>
+ Pacotes: **socket**<br>
+ Este aplicativo e um servido e um cliente.
+## SSH
+ Python: **3.7.5**<br>
+ Pacotes: **tkinter; paramiko.**<br>
+ Este aplicativo se conectar a um servidor ssh.
+## FTP
+ Python: **3.7.5**<br>
+ Pacotes: **tkinter; ftplib.**<br>
+ Este aplicativo se conectar a um servidor ftp.
