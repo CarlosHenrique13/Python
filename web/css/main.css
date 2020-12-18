@@ -55,11 +55,11 @@ table a:hover{
 /* Diviçoes */
 .esquerda{
     position: relative;
-    width: 46%;
+    width: 45%;
     height: 40%;
     padding: 2%;
     float: left;
-    border-right: solid 1px black;
+    border-right: solid 2px #7A4419;
 }
 .esquerda img{
     border-radius: 5px;
@@ -71,7 +71,7 @@ table a:hover{
 }
 .direita{
     position: relative;
-    width: 46%;
+    width: 45%;
     height: 40%;
     padding: 2%;
     float: left;
