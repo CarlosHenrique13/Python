@@ -8,3 +8,6 @@ navegador/__pycache__/
 SemNome/.idea/
 SemNome/__pycache__/
 ssh/.idea/
+SOCKET/.idea/
+SOCKET/venv/
+SOCKET/__pycache__/
