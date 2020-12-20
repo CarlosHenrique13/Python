@@ -1,0 +1,20 @@
+from tkinter import *
+from src.cliente import Client
+
+janela = Tk()
+janela.title("Socket")
+janela.geometry("500x500")
+Label(text="IP").place(x=5,y=4)
+ip = Entry()
+ip.place(x=5,y=20)
+Label(text="Usuário").place(x=155,y=4)
+user = Entry()
+user.place(x=155,y=20)
+Label(text="Senha").place(x=305,y=4)
+pasw = Entry(show="*")
+pasw.place(x=305,y=20)
+Label(text="Porta").place(x=460,y=4)
+port = Entry(width=5)
+port.place(x=460,y=20)
+btn_client = Button(text="Cliente", command=lambda: Client(host=ip.get(),porta=int(port.get())))
+janela.mainloop()
