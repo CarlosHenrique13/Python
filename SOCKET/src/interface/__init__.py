@@ -26,9 +26,14 @@ port.place(x=460,y=20)
 text_area = Text(janela,width=60,height=25)
 text_area.place(x=5,y=90)
 #Butões
-btn_client = Button(janela,text="Cliente", command=lambda: text_area.insert('1.0',Client(host=ip.get(), porta=int(port.get()))))
-btn_client.place(x=5, y=50)
-btn_server = Button(janela,text="Server",command=lambda: Server(host=ip.get(),porta=int(port.get())))
-btn_server.place(x=70,y=50)
-
+try:
+    btn_client = Button(janela,text="Cliente", command=lambda: text_area.insert('1.0',Client(host=ip.get(), porta=int(port.get()))))
+    btn_client.place(x=5, y=50)
+except:
+    pass
+try:
+    btn_server = Button(janela,text="Server",command=lambda: Server(host=ip.get(),porta=int(port.get())))
+    btn_server.place(x=70,y=50)
+except:
+    pass
 janela.mainloop()
