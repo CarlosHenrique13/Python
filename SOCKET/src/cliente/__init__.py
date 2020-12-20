@@ -1,6 +1,6 @@
 import socket
 
-def Client(self,host,porta=8585):
+def Client(host="127.0.0.1",porta=8585):
         """
         -> Cliente TCP
         :param host: Ip de destino
@@ -11,10 +11,9 @@ def Client(self,host,porta=8585):
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((host, porta))
             dados = s.recv(1024)
-            print(dados.decode('ascii'))
+            return str(dados.decode('utf-8')+"\n")
         except(ConnectionRefusedError):
-            print("[-][TCP]Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente")
+            return ("[-][TCP]Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente \n")
         except():
             pass
-            
             

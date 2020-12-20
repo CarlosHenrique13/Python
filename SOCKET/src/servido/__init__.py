@@ -1,6 +1,6 @@
 import socket
 
-def Server(self,host="127.0.0.1",porta=8585):
+def Server(host="127.0.0.1",porta=8585):
         """
         -> Servido TCP
         :param host: Ip para o Servido
@@ -14,5 +14,7 @@ def Server(self,host="127.0.0.1",porta=8585):
         while True:
             c, e = s.accept()
             print("Conectado com ", e)
-            c.send(msg.encode('ascii'))
+            c.send(msg.encode('utf-8'))
             c.close()
+
+#Server()
