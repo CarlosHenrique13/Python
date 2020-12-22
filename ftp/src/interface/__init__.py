@@ -71,3 +71,8 @@ class Interface():
     def Donwload(self):
         self.saida.insert('1.0',self.ftp.Download(self.server,self.Item_Serve()))
 
+    def Item_Serve(self):
+        # Pega iten selecionado
+        indice = int(self.server_dir.curselection()[0])
+        return self.itens[indice]
+
