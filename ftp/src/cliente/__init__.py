@@ -1,8 +1,7 @@
 from ftplib import FTP
 
-
-class FTP():
-    def Client(self, ip='', login='', password='', port=2121):
+class FTP_():
+    def Client(self, ip='', login='', password='', port=21):
         """
         -> Cliente FTP
         :param login: Usuario do servido FTP
@@ -14,12 +13,11 @@ class FTP():
         try:
             handler = FTP(ip)
             handler.login(login, password)
-            print('[+][FTP]Conectado')
-            return handler
+            return (handler,'[+][FTP]Conectado\n')
         except Exception:
-            print('[-][FTP]Não foi possivel conectar ao servidor FTP Verefique se a internet')
+            return ('[-][FTP]Não foi possivel conectar ao servidor FTP Verefique se a internet\n')
 
-    def Download(self, handler, dire, filename):
+    def Download(self, ftp , filename):
         """
         -> Downloads FTP
         :param handler: Servido FTP
@@ -27,15 +25,16 @@ class FTP():
         :param filename: Nome do arquivo que sera baixado com extensão
         :return: None
         """
-        Dfile = open(f'{dire}/{filename}', 'wb')
+        #{dire}/
+        Dfile = open(f'data/download/{filename}', 'wb')
         try:
-            handler.retrbinary('RETR ' + filename, Dfile.write)
+            ftp.retrbinary('RETR ' + filename, Dfile.write)
         except:
-            print('[-][FTP]Erro ao abaixar o arquivo ')
+            return ('[-][FTP]Erro ao abaixar o arquivo \n')
         Dfile.close()
-        print('[+][FTP]Download feito com sucesso!')
+        return ('[+][FTP]Download feito com sucesso!\n')
 
-    def Upload(self, handler, name, path, local=dir):
+    def Upload(self, ftp, name, path, local=dir):
         """
         -> Upload
         :param handler: Servidor FTP
@@ -45,8 +44,8 @@ class FTP():
         :return: None
         """
         try:
-            handler.cwd(local)
-            handler.storbinary('STOR ' + name, open(path, 'rb'), 1024)
+            ftp.cwd(local)
+            ftp.storbinary('STOR ' + name, open(path, 'rb'), 1024)
             print(f'[+][FTP]Upload {name} feito com sucesso.')
         except:
 
@@ -54,7 +53,7 @@ class FTP():
             return None
         print('[+][FTP]Operação efetuada com sucesso :)')
 
-    def ListDirectories(self, ftp):
+    def ListDirectories(self,ftp):
         """
         -> Listar Diretorias
         :param ftp: Servido Conectado
@@ -68,7 +67,7 @@ class FTP():
             arqs.append(f)
         return arqs
 
-    def MoveToDir(self, handler, Dir):
+    def MoveToDir(self, Dir):
         """
         -> Mover para Diretoria
         :param handler: Servido FTP
@@ -76,12 +75,12 @@ class FTP():
         :return: None
         """
         try:
-            handler.cwd(Dir)
+            self.handler.cwd(Dir)
             print(f'[+][FTP]Movido arquivo: {Dir}')
         except Exception:
             print('[-][FTP]Não foi possivel acessar o diretorio!!')
     
-    def MakeDir(self, handler, name):
+    def MakeDir(self, name):
         """
         -> Criar Diretorio
         :param handler: Servido FTP
@@ -89,12 +88,12 @@ class FTP():
         :return: None
         """
         try:
-            handler.mkd(name)
+            self.handler.mkd(name)
             print(f'[+][FTP]Diretorio {name} criado com sucessor.')
         except Exception:
             print('[-][FTP]Não foi possivel criar o diretorio ela ja existe!!')
 
-    def DelFile(self, handler, name):
+    def DelFile(self, name):
             """
             -> Deletar Arquivo
             :param handler: Servido FTP
@@ -102,7 +101,9 @@ class FTP():
             :return: None
             """
             try:
-                handler.delete(name)
+                self.handler.delete(name)
                 print('[+][FTP]O arquivo foi deletado')
             except Exception:
                 print('[-][FTP]não foi possivel deletar o arquivo ou ele é inexistente')
+
+
