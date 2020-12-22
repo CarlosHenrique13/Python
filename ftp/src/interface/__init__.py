@@ -60,3 +60,10 @@ class Interface():
         btn_del.place(x=240,y=50)
 
         janela.mainloop()
+    def Conectar(self):
+    # Conectar ao Servido
+    self.server, self.resut = self.ftp.Client(ip=self.ip.get(), login=self.user.get(), password=self.pasw.get(), port=int(self.port.get()))
+    self.saida.insert('1.0',self.resut)
+    self.itens = self.ftp.ListDirectories(self.server)
+    for values in self.itens:
+        self.server_dir.insert(END, values)
