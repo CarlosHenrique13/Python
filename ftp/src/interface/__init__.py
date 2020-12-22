@@ -67,3 +67,7 @@ class Interface():
     self.itens = self.ftp.ListDirectories(self.server)
     for values in self.itens:
         self.server_dir.insert(END, values)
+        
+    def Donwload(self):
+        self.saida.insert('1.0',self.ftp.Download(self.server,self.Item_Serve()))
+
